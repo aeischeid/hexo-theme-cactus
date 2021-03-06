@@ -31,6 +31,7 @@
   <% } %>
 </section>
 
+
 <section id="writing">
   <span class="h1"><a href="<%- url_for(theme.nav.articles) %>"><%= __('index.articles') %></a></span>
   <% if (theme.tags_overview && site.tags.length) { %>
@@ -58,6 +59,171 @@
     <%- partial('_partial/pagination') %>
   <% } %>
 </section>
+
+<style>
+#Bender {
+  height: 595px;
+  width: 460px;
+  padding-top: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 230px 230px 0 0;
+  background: #a6b4c4;
+  background-image:
+    radial-gradient(
+      #a6b4c4,
+      #59798e
+    );
+}
+#Bender__eyes {
+  width: 400px;
+  height: 150px;
+  border: 3px solid black;
+  border-radius: 200px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#Bender__socket {
+  width: 375px;
+  height: 125px;
+  border: 3px solid black;
+  border-radius: 200px;
+  background: black;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.Bender__eye {
+  height: 145px;
+  width: 145px;
+  background: #fefbb8;
+  border-radius: 100%;
+  margin: -10px 10px 0px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.Bender__eye::before {
+  content: '';
+  position: absolute;
+  width: 145px;
+  height: 50px;
+  top: -50px;
+  background: black;
+  animation:  5s ease-in-out 1s infinite topEyelid;
+}
+.Bender__eye::after {
+  content: '';
+  position: absolute;
+  width: 145px;
+  height: 50px;
+  bottom: -50px;
+  background: black;
+  animation:  5s ease-in-out 1s infinite bottomEyelid;
+}
+.Bender__pupil {
+  width: 20px;
+  height: 20px;
+  background: black;
+}
+.Bender__mouth {
+  width: 275px;
+  height: 100px;
+  background: #fefbb8;
+  margin-top: 80px;
+  border-radius: 50px;
+  border: 4px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  overflow: hidden;
+  position: relative;
+}
+
+.Bender__tooth {
+  height: 100px;
+  width: 4px;
+  background: black;
+}
+
+
+.Bender__lip {
+  position: absolute;
+  width: 275px;
+  height: 4px;
+  background: black;
+  top: calc(33% - 2px);
+}
+.Bender__lip:last-of-type {
+  top: calc(66% - 2px);
+}
+
+@keyframes topEyelid {
+  0% {
+    transform: translateY(0);
+  }
+  20% { 
+    transform: translateY(50px);
+  }
+  80% {
+    transform: translateY(50px);
+  }
+  100% {
+    transform: translateY(-0px);
+  }
+}
+
+@keyframes bottomEyelid {
+  0% {
+    transform: translateY(0px);
+  }
+  20% { 
+    transform: translateY(-50px);
+  }
+  80% {
+    transform: translateY(-50px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+</style>
+
+<hr />
+
+<div id="Bender">
+  <div id="Bender__eyes">
+    <div id="Bender__socket">
+      <div class="Bender__eye">
+        <div class="Bender__pupil"></div>
+      </div>
+      <div class="Bender__eye">
+        <div class="Bender__pupil"></div>
+      </div>
+    </div>
+  </div>
+  <div class="Bender__mouth">
+    <div class="Bender__tooth"></div>
+    <div class="Bender__tooth"></div>
+    <div class="Bender__tooth"></div>
+    <div class="Bender__tooth"></div>
+    <div class="Bender__tooth"></div>
+    <div class="Bender__tooth"></div>
+    <div class="Bender__tooth"></div>
+
+    <div class="Bender__lip"></div>
+    <div class="Bender__lip"></div>
+  </div>
+</div>
+
+
 
 <% if (site.data.projects) { %>
 <section id="projects">
